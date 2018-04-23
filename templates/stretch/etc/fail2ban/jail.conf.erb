@@ -766,7 +766,7 @@ backend  = %(syslog_backend)s
 
 
 [xinetd-fail]
-<%= scope['::fail2ban::jails'].include? "xinetd-fail" %>
+enabled = <%= scope['::fail2ban::jails'].include? "xinetd-fail" %>
 banaction = iptables-multiport-log
 logpath   = %(syslog_daemon)s
 backend   = %(syslog_backend)s
